@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "e8a69948-b006-45e4-9050-c62c852fb72c",
+		"name": "Devsu-Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "GET Clientes ALTA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Clientes BAJA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cliente ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/dni/5fac0a7f-ae6a-4898-b14a-569004520b1e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"dni",
+								"5fac0a7f-ae6a-4898-b14a-569004520b1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cliente DNI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/dni/22254679",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"dni",
+								"22254679"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Plasmzc3\",\r\n    \"nombre\": \"Inti\",\r\n    \"apellido\": \"Garcia\",\r\n    \"genero\": \"MUJER\",\r\n    \"edad\": \"33\",\r\n    \"dni\":\"3456789\",\r\n    \"calle\":\"Urquiza\",\r\n    \"altura\":\"2020\",\r\n    \"codigoPais\":\"54\",\r\n    \"codigoArea\":\"341\",\r\n    \"telefono\":\"576903\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SOFT DELETE Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/789984ca-7432-4e3a-86df-be0e7e10f474",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"789984ca-7432-4e3a-86df-be0e7e10f474"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HARD DELETE Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/clientes/789984ca-7432-4e3a-86df-be0e7e10f474/hard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"clientes",
+								"789984ca-7432-4e3a-86df-be0e7e10f474",
+								"hard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta",
+			"item": [
+				{
+					"name": "CREATE Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clienteID\": \"5f684706-cfdd-471a-9f61-e6e0199ec63f\",\r\n    \"tipoDeCuenta\":\"CUENTA_CORRIENTE\",\r\n    \"saldoInicial\":\"1000.00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE Cuenta Saldo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"saldo\" : 2000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cuentas/5f684706-cfdd-471a-9f61-e6e0199ec63f/581936",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuentas",
+								"5f684706-cfdd-471a-9f61-e6e0199ec63f",
+								"581936"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cuentas por Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cuentas/cte=f2f64466-a2cf-4b95-b5e3-d5f76793e46f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuentas",
+								"cte=f2f64466-a2cf-4b95-b5e3-d5f76793e46f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cuenta Consulta Saldo",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimiento",
+			"item": [
+				{
+					"name": "CREATE Movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"CREDITO\",\r\n    \"monto\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movimientos/5f684706-cfdd-471a-9f61-e6e0199ec63f/581936",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimientos",
+								"5f684706-cfdd-471a-9f61-e6e0199ec63f",
+								"581936"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
