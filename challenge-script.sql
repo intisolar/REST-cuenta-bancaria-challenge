@@ -29,3 +29,5 @@ INSERT INTO cuentas VALUES ('8643af21-eea2-450d-a650-8ce5814f6a90', '2021-11-21 
 
 SELECT * FROM devsu.cuentas;
 Select * FROM devsu.clientes;
+Select * FROM devsu.cuentas_movimientos;
+describe cuentas_movimientos;

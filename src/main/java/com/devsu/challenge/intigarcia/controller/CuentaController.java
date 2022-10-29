@@ -2,14 +2,12 @@ package com.devsu.challenge.intigarcia.controller;
 
 import com.devsu.challenge.intigarcia.exception.DataNotFoundException;
 import com.devsu.challenge.intigarcia.exception.InsufficientPermissionsException;
-import com.devsu.challenge.intigarcia.exception.InvalidCredentialsException;
 import com.devsu.challenge.intigarcia.exception.ResourceAlreadyExistsException;
 import com.devsu.challenge.intigarcia.exception.ResourceNotFoundException;
 import com.devsu.challenge.intigarcia.model.request.CreateCuentaRequest;
 import com.devsu.challenge.intigarcia.model.request.UpdateCuentaSaldoRequest;
 import com.devsu.challenge.intigarcia.model.response.CuentaConsultaSaldoResponse;
 import com.devsu.challenge.intigarcia.model.response.CuentaResponse;
-
 import com.devsu.challenge.intigarcia.model.response.ListCuentaResponse;
 import com.devsu.challenge.intigarcia.service.abstraction.ICreateCuenta;
 import com.devsu.challenge.intigarcia.service.abstraction.IDeleteCuenta;
@@ -28,7 +26,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

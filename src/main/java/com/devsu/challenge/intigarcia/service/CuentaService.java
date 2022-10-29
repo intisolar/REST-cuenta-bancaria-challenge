@@ -10,8 +10,6 @@ import com.devsu.challenge.intigarcia.model.request.UpdateCuentaSaldoRequest;
 import com.devsu.challenge.intigarcia.model.response.CuentaConsultaSaldoResponse;
 import com.devsu.challenge.intigarcia.model.response.CuentaResponse;
 import com.devsu.challenge.intigarcia.model.response.ListCuentaResponse;
-import com.devsu.challenge.intigarcia.repository.IClienteRepository;
-import com.devsu.challenge.intigarcia.repository.ICuentaRepository;
 import com.devsu.challenge.intigarcia.service.abstraction.ICreateCuenta;
 import com.devsu.challenge.intigarcia.service.abstraction.IDeleteCuenta;
 import com.devsu.challenge.intigarcia.service.abstraction.IGetCuenta;
@@ -70,10 +68,9 @@ public class CuentaService extends AuthorizationService implements ICreateCuenta
 
   @Override
   public Cuenta findByNumeroCuentaReturnCuenta(String nroCuenta) {
-    Cuenta cuenta = findByNumeroCuentaReturnCuenta(nroCuenta);
+    Cuenta cuenta = findCuentaByNumeroCuenta(nroCuenta);
     return cuenta;
   }
-
 
   @Override
   public ListCuentaResponse list() {
@@ -106,17 +103,15 @@ public class CuentaService extends AuthorizationService implements ICreateCuenta
   @Override
   public CuentaConsultaSaldoResponse getSaldo(String clienteId, String numeroCuenta) {
     Cliente cliente = findActiveBy(clienteId);
-    Cuenta cuenta = hasPermissions(cliente, numeroCuenta);
-    return mapper.map(cliente.getNombre()+" "+cliente.getApellido(), cuenta.getSaldo());
+    Cuenta cuenta = hasPermissionReturnCuenta(cliente, numeroCuenta);
+    return mapper.map(cliente.getNombre() + " " + cliente.getApellido(), cuenta.getSaldo());
   }
-
-
 
   @Override
   public CuentaConsultaSaldoResponse update(UpdateCuentaSaldoRequest request, String id,
       String nroCuenta) {
     Cliente cliente = findActiveBy(id);
-    Cuenta cuenta = hasPermissions(cliente, nroCuenta);
+    Cuenta cuenta = hasPermissionReturnCuenta(cliente, nroCuenta);
     BigDecimal nuevoSaldo = cuenta.getSaldo();
     nuevoSaldo = nuevoSaldo.add(request.getSaldo());
     cuenta.setSaldo(nuevoSaldo);
@@ -168,15 +163,11 @@ public class CuentaService extends AuthorizationService implements ICreateCuenta
     return resultado.isPresent();
   }
 
-
-
   private void isListEmpty(List<Cuenta> cuentas) {
     if (cuentas.size() == 0) {
       throw new DataNotFoundException("La tabla aún no tiene clientes.");
     }
   }
-
-
 
 
 }

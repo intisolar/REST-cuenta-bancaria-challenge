@@ -52,7 +52,7 @@ public class Cuenta {
   @Column(name = "ULTIMA_TRANSACCION")
   private LocalDateTime ultimaTransaccion;
 
-  @OneToMany
+  @OneToMany(mappedBy = "cuenta", orphanRemoval = true)
   private List<Movimiento> movimientos;
 
   @Column(name = "CREATION_TIMESTAMP")

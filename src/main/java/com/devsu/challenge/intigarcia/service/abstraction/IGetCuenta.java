@@ -12,7 +12,6 @@ public interface IGetCuenta {
   CuentaResponse findByNumeroCuenta(String nroCuenta);
 
   Cuenta findByNumeroCuentaReturnCuenta(String nroCuenta);
-
   ListCuentaResponse list();
 
   ListCuentaResponse listActive();

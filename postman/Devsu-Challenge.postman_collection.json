@@ -263,7 +263,20 @@
 					"name": "GET Cuenta Consulta Saldo",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cuentas/5f684706-cfdd-471a-9f61-e6e0199ec63f/123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cuentas",
+								"5f684706-cfdd-471a-9f61-e6e0199ec63f",
+								"123456"
+							]
+						}
 					},
 					"response": []
 				}
@@ -297,6 +310,27 @@
 								"movimientos",
 								"5f684706-cfdd-471a-9f61-e6e0199ec63f",
 								"581936"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Movimientos por Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movimientos/5f684706-cfdd-471a-9f61-e6e0199ec63f/123456",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movimientos",
+								"5f684706-cfdd-471a-9f61-e6e0199ec63f",
+								"123456"
 							]
 						}
 					},

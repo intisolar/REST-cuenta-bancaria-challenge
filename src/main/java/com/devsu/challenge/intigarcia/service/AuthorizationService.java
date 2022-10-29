@@ -44,7 +44,7 @@ public class AuthorizationService {
     return cuenta;
   }
 
-  protected Cuenta hasPermissions(Cliente cliente, String numeroCuenta) {
+  protected Cuenta hasPermissionReturnCuenta(Cliente cliente, String numeroCuenta) {
     Cuenta cuenta = findCuentaByNumeroCuenta(numeroCuenta);
     if (!cliente.equals(cuenta.getCliente())) {
       throw new InsufficientPermissionsException(

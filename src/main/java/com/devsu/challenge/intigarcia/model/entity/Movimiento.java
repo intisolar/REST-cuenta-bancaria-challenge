@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,6 +27,10 @@ public class Movimiento {
   @GenericGenerator(name = "uuid", strategy = "uuid2")
   @Column(name = "MOVIMIENTO_ID")
   private String id;
+
+  @ManyToOne
+  @JoinColumn(name = "CUENTA_ID")
+  private Cuenta cuenta;
 
   @Column(name = "FECHA_HORA")
   private LocalDateTime fecha;
